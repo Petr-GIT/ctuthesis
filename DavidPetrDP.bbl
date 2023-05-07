@@ -1,10 +1,10 @@
 \begin{thebibliography}{1}
 
-\bibitem{HSE_Datasheet}
-{\sc Co, I. E.~S.}
-\newblock Rohs/sony compliance quartz crystal unit specification.
-\newblock [online].
-\newblock [cit. 2023-04-22].
+\bibitem{BerlingerDIP}
+{\sc Berlinger, A.}
+\newblock Implementace přístrojových funkcí s využitím mikrořadičů
+  stm32, 2016.
+\newblock [cit. 2023-05-23].
 
 \bibitem{DujavaDIP}
 {\sc Dujava, J.}
@@ -30,5 +30,19 @@
 \newblock {\em Datasheet {DS12589} STM32G431x6 STM32G431x8 STM32G431xB}.
 \newblock Rev 6, 10 2021.
 \newblock [cit. 2023-05-06].
+
+\bibitem{ADC_Acuraccy}
+{\sc STMicroelectronics}.
+\newblock Application note {AN2834} how to get the best adc accuracy in stm32
+  microcontrollers.
+\newblock [online], 01 2022.
+\newblock [cit. 2023-05-02].
+
+\bibitem{CORDIC}
+{\sc STMicroelectronics}.
+\newblock How to use the cordic to perform mathematical functions on stm32
+  mcus.
+\newblock [online], 02 2023.
+\newblock [cit. 2023-05-05].
 
 \end{thebibliography}

@@ -123,26 +123,27 @@
 	% Set the page geometry to the title one (it's a bit wider)
 	\ctuthesis_geometry_title:
 	\newpage
-	\pagestyle{twocol}
+	% \pagestyle{twocol}
 	% Start the twocolumn.
 	\twocolumn[]\relax
+	% \onecolumn\relax
 	% We are narrow, so we wanna be sloppy
 	\sloppy
 	% Chapter behaves differently. Both the [] argument and the star * are ignored.
-%	\DeclareDocumentCommand\chapter{ s o m }{\relax
-%		% Vertical adjustment
-%		\vspace* { -\baselineskip }
-%		\nointerlineskip
-%		% Zero measure vertical box, the contents are raised by something and typeset
-%		\vbox to 0pt{\noindent\leavevmode\smash{\raise6pt\hbox to \linewidth{%
-%			% In the first column its right-aligned, in the second left-aligned.
-%			% It can't be more than one line.
-%			\if@firstcolumn\hfil\fi
-%			\color{ctubluetext}\LARGE\bfseries\sffamily##3
-%			\if@firstcolumn\else\hfil\fi
-%		}}}
-%		\everypar{\noindent}
-%	}
+	% \DeclareDocumentCommand\chapter{ s o m }{\relax
+	% 	% Vertical adjustment
+	% 	\vspace* { -\baselineskip }
+	% 	\nointerlineskip
+	% 	% Zero measure vertical box, the contents are raised by something and typeset
+	% 	\vbox to 0pt{\noindent\leavevmode\smash{\raise6pt\hbox to \linewidth{%
+	% 		% In the first column its right-aligned, in the second left-aligned.
+	% 		% It can't be more than one line.
+	% 		\if@firstcolumn\hfil\fi
+	% 		\color{ctubluetext}\LARGE\bfseries\sffamily##3
+	% 		\if@firstcolumn\else\hfil\fi
+	% 	}}}
+	% 	\everypar{\noindent}
+	% }
 	\DeclareDocumentCommand\chapter{ s o m }{\relax
 		% Compute the vertical adjustment
 		\skip_gset:Nn \g_ctuthesis_tempa_skip { - \box_ht:N \strutbox }
@@ -196,10 +197,10 @@
 
 % The ratios of inner:outer margins
 % Needs to be separate as this to make the colon ":" have the right catcode
-\cs_new:Nx \ctuthesis_geometry_hmarginratio: {4\string :6}
+\cs_new:Nx \ctuthesis_geometry_hmarginratio: {5\string :4} % hanetar 5:4 (default 4:6)
 
 % Target textwidth is 33*basesize (10pt to 12pt)
-\dim_const:Nn \g_ctuthesis_geometry_textwidth_dim { \tl_use:N \g_ctuthesis_fontsize_tl * 33 }
+\dim_const:Nn \g_ctuthesis_geometry_textwidth_dim { \tl_use:N \g_ctuthesis_fontsize_tl * 44 } % hanetar 44 (default 33)
 
 % Text occupies 75% of the height of the page by default, less if layout-short is active
 % The vmargin ratio is set here in the same manner as the hmargin one above
@@ -207,8 +208,8 @@
 	\dim_const:Nn \g_ctuthesis_geometry_textheight_dim { 1.5\g_ctuthesis_geometry_textwidth_dim }
 	\cs_new:Nx \ctuthesis_geometry_vmarginratio: {4\string :3}
 } {
-	\dim_const:Nn \g_ctuthesis_geometry_textheight_dim { 0.75\paperheight }
-	\cs_new:Nx \ctuthesis_geometry_vmarginratio: {5\string :6}
+	\dim_const:Nn \g_ctuthesis_geometry_textheight_dim { 0.8\paperheight } % hanetar 0.8 (default 0.75)
+	\cs_new:Nx \ctuthesis_geometry_vmarginratio: {1\string :1} % hanetar 1:1 (default 5:6)
 }
 
 % Loading the geometry package.
@@ -233,7 +234,7 @@
 		% Use the stored innermargin value
 		inner = \g_ctuthesis_geometry_innermargin_dim ,
 		% Increase the width by 20%, but do not exceed 420pt
-		textwidth = \dim_min:nn { 420pt } { 1.2 \g_ctuthesis_geometry_textwidth_dim } ,
+		textwidth = \g_ctuthesis_geometry_textwidth_dim, % hanetar, (default \dim_min:nn { 420pt } { 1.2 \g_ctuthesis_geometry_textwidth_dim } ),
 	 	textheight = \g_ctuthesis_geometry_textheight_dim ,
 		vmarginratio = \ctuthesis_geometry_vmarginratio: ,
 		headheight = 16pt ,
@@ -328,7 +329,7 @@
 	% If the chapter is starred, we still want to \chaptermark it, just we use the variant \chapterstarmark.
 	\ifttl@label\else\chapterstarmark{#8}\fi
 	% If the chapter is starred, we still want it in the ToC.
-	\ifttl@label\else\addcontentsline{toc}{chapter}{#8}\fi
+	% \ifttl@label\else\addcontentsline{toc}{chapter}{#8}\fi % hanetar commented out to hide abstract, thanks, etc from ToC
 	\ctu@title@boxify{#5}{#3}{
 		{#1\strut\ifttl@label#2\fi\par}
 		\medskip
@@ -402,7 +403,7 @@
 
 % Subsections are the lowest numbered titles, and also the lowest included in ToC.
 \setcounter{secnumdepth}{2}
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{1} % hanetar 1 (default 2)
 
 % Appendix treatment: Even if a chapter in appendix has a star, it will get a number (letter in this case), since
 % once you get any appendix, it doesn't make sense not to number some of them.

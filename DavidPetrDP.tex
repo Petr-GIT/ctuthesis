@@ -54,6 +54,11 @@
 \usepackage{epstopdf}
 \usepackage{graphicx}
 \usepackage{pdfpages}
+\usepackage{caption}
+\usepackage{svg}
+\captionsetup[table]{name=Tab.}
+\captionsetup[figure]{name=Obr.}
+
 \newcommand{\sigline}[1]{\makebox[\widthof{#1~}]{.\dotfill}\\#1}
 \numberwithin{table}{chapter}
 \ctuprocess
@@ -108,18 +113,12 @@ Prohlašuji, že jsem předloženou práci vypracoval samostatně, a že jsem uv
 V Praze, \ctufield{day}.~\monthinlanguage{title}~\ctufield{year}
 \end{declaration}
 
-% Only for testing purposes
-\listfiles
-\usepackage[pagewise]{lineno}
-\usepackage{lipsum,blindtext}
-\usepackage{mathrsfs} % provides \mathscr used in the ridiculous examples
 
 \begin{document}
-
 \maketitle
-
 \chapter{Úvod}
-\input{ctutest-1}
+\input{02_rozbor.tex}
+\input{03_realizace.tex}
 
 
 
@@ -127,8 +126,8 @@ V Praze, \ctufield{day}.~\monthinlanguage{title}~\ctufield{year}
 
 %\blinddocument
 
-\chapter{Výsledky}
-\section{wow}
+\chapter{Zhodnocení}
+\chapter{Závěr}
 \appendix
 
 \printindex
