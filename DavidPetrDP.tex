@@ -33,15 +33,16 @@
 	month = 5,
 	year = 2023,
 	specification-file = {DavidPetr-Zadani.pdf},
-		front-specification = true,
+	front-specification = true,
 	pkg-listings = true,
 	%	front-list-of-figures = false,
 	%	front-list-of-tables = false,
 	%	monochrome = true,
-	%	layout-short = true,
+	% layout-short = true
 	}
 
-
+\usepackage{mwe}
+\usepackage{caption}
 \usepackage{gensymb}
 \usepackage{calc}
 \PassOptionsToPackage{hyphens}{url}
@@ -54,6 +55,7 @@
 \usepackage{epstopdf}
 \usepackage{graphicx}
 \usepackage{pdfpages}
+\usepackage{makeidx}
 \usepackage{caption}
 \usepackage{svg}
 \captionsetup[table]{name=Tab.}
@@ -116,9 +118,9 @@ V Praze, \ctufield{day}.~\monthinlanguage{title}~\ctufield{year}
 
 \begin{document}
 \maketitle
-\chapter{Úvod}
 \input{02_rozbor.tex}
 \input{03_realizace.tex}
+\input{04_Vyuziti.tex}
 
 
 
@@ -126,7 +128,7 @@ V Praze, \ctufield{day}.~\monthinlanguage{title}~\ctufield{year}
 
 %\blinddocument
 
-\chapter{Zhodnocení}
+
 \chapter{Závěr}
 \appendix
 

@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="CircularBufferDMA.svg"
+   inkscape:export-filename="CircularBufferDMA.pdf"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="1.3547776"
+     inkscape:cx="334.74129"
+     inkscape:cy="571.31148"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid9" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="Arrow3"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Arrow3"
+       markerWidth="4.2071066"
+       markerHeight="7"
+       viewBox="0 0 4.2071068 7"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:round"
+         d="M 3,-3 0,0 3,3"
+         id="arrow3"
+         transform="rotate(180,0.125,0)"
+         sodipodi:nodetypes="ccc" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow4"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Arrow4"
+       markerWidth="5"
+       markerHeight="6"
+       viewBox="0 0 5 6"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="m 1,0 -3,3 h -2 l 3,-3 -3,-3 h 2 z"
+         id="path1741" />
+    </marker>
+    <rect
+       x="150"
+       y="540"
+       width="250"
+       height="40"
+       id="rect77079" />
+    <rect
+       x="320"
+       y="580"
+       width="35"
+       height="40"
+       id="rect76881" />
+    <rect
+       x="325"
+       y="560"
+       width="20"
+       height="35"
+       id="rect76835" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect71159"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect71119"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect71085"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="curvestitching"
+       id="path-effect70511"
+       is_visible="true"
+       lpeversion="1"
+       count="13"
+       startpoint_edge_variation="0;1"
+       startpoint_spacing_variation="0;1"
+       endpoint_edge_variation="0;1"
+       endpoint_spacing_variation="0;1"
+       strokepath="M0,0 L1,0"
+       prop_scale="1"
+       scale_y_rel="false" />
+    <inkscape:path-effect
+       effect="curvestitching"
+       id="path-effect68669"
+       is_visible="true"
+       lpeversion="1"
+       count="3"
+       startpoint_edge_variation="0;1"
+       startpoint_spacing_variation="0;1"
+       endpoint_edge_variation="0;1"
+       endpoint_spacing_variation="0;1"
+       strokepath="M 0,0 H 1"
+       prop_scale="1"
+       scale_y_rel="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect71159-1"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect71085-7"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect71119-4"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <rect
+       x="150"
+       y="540"
+       width="250"
+       height="40"
+       id="rect77079-3" />
+  </defs>
+  <g
+     inkscape:label="Vrstva 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-size:3.88056px;fill:none;fill-opacity:1;stroke:none;stroke-width:0.600001;stroke-linejoin:bevel;stroke-miterlimit:3.6;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       x="18.520834"
+       y="85.989586"
+       id="text7233"><tspan
+         sodipodi:role="line"
+         id="tspan7231"
+         style="stroke-width:0.6"
+         x="18.520834"
+         y="85.989586" /></text>
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text76833"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.3333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect76835);display:inline;fill:#000000;fill-opacity:0;stroke:none;stroke-width:3.77953;stroke-linejoin:round;stroke-miterlimit:3.5;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:0;stroke:none;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:3.5;stroke-dasharray:none;stroke-opacity:1"
+       x="88.635414"
+       y="153.45833"
+       id="text76877"><tspan
+         sodipodi:role="line"
+         id="tspan76875"
+         style="stroke-width:1"
+         x="88.635414"
+         y="153.45833" /></text>
+    <g
+       id="g5254"
+       transform="matrix(0.49945577,0,0,0.47093222,15.129349,71.301954)"
+       style="stroke-width:1.23715;stroke-dasharray:none;fill:#3a92fa;fill-opacity:0.43137255">
+      <g
+         id="g5249"
+         style="stroke-width:1.23715;stroke-dasharray:none;fill:#3a92fa;fill-opacity:0.43137255">
+        <rect
+           style="fill:#3a92fa;fill-opacity:0.43137255;stroke:#000000;stroke-width:1.23715;stroke-linejoin:round;stroke-miterlimit:3.5;stroke-dasharray:none;stroke-opacity:1"
+           id="rect73940"
+           width="124.35416"
+           height="95.25"
+           x="15.875"
+           y="134.9375"
+           ry="7.1437502" />
+      </g>
+      <rect
+         style="fill:#ffffff;stroke:#000000;stroke-width:1.23715;stroke-dasharray:none;fill-opacity:0.43137255"
+         id="rect4762"
+         width="124.39399"
+         height="48.407677"
+         x="15.855085"
+         y="164.00418"
+         ry="0" />
+    </g>
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.6;stroke-linejoin:round;stroke-miterlimit:3.5;stroke-dasharray:none;stroke-opacity:1"
+       d="m 33.47352,156.56741 c 2.411413,-2.71284 4.822837,-5.42569 7.234275,-8.13856"
+       id="path71083"
+       inkscape:original-d="m 33.47352,156.56741 c 2.411605,-2.71267 4.823031,-5.42552 7.234275,-8.13856"
+       inkscape:path-effect="#path-effect71085" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.6;stroke-linejoin:round;stroke-miterlimit:3.5;stroke-dasharray:none;stroke-opacity:1"
+       d="m 35.282088,154.75884 c -0.602672,-0.60267 -1.20553,-1.20553 -1.808568,-1.80857"
+       id="path71117"
+       inkscape:path-effect="#path-effect71119"
+       inkscape:original-d="m 35.282088,154.75884 c -0.602674,-0.60267 -1.205532,-1.20553 -1.808568,-1.80857" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.31810396,0,0,0.31810396,-20.865144,-33.774356)"
+       id="text77077"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.3333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect77079);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.88618;stroke-linejoin:round;stroke-miterlimit:3.5;stroke-dasharray:none;stroke-opacity:1"><tspan
+         x="150"
+         y="559.46302"
+         id="tspan7679">Vzorkovací čítač</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.30513px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.6;stroke-dasharray:none"
+       x="29.438078"
+       y="177.5744"
+       id="text5246"><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.30513px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.6;stroke-dasharray:none"
+         x="29.438078"
+         y="177.5744"
+         id="tspan5256">Gated+ reset mód </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.30513px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.6;stroke-dasharray:none"
+       x="68.339821"
+       y="156.49229"
+       id="text5260"><tspan
+         sodipodi:role="line"
+         id="tspan5258"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.30513px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.6;stroke-dasharray:none"
+         x="68.339821"
+         y="156.49229">TRGI</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.30513px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.6;stroke-dasharray:none"
+       x="41.267578"
+       y="165.32866"
+       id="text5264"><tspan
+         sodipodi:role="line"
+         id="tspan5262"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.30513px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.6;stroke-dasharray:none"
+         x="41.267578"
+         y="165.32866">Update - TRGO</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.30513px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.6;stroke-dasharray:none"
+         x="41.267578"
+         y="171.96008"
+         id="tspan5266" /></text>
+    <g
+       id="g5285-4"
+       transform="matrix(0.68355353,0,0,0.68355353,79.297907,42.627584)"
+       style="stroke-width:0.87776593;stroke-dasharray:none">
+      <g
+         id="g5254-1"
+         transform="matrix(0.79190345,0,0,0.6889471,13.462175,42.64465)"
+         style="fill:#3a92fa;fill-opacity:0.43137255;stroke-width:1.18836449;stroke-dasharray:none">
+        <g
+           id="g5249-1"
+           style="fill:#3a92fa;fill-opacity:0.43137255;stroke-width:1.18836449;stroke-dasharray:none">
+          <rect
+             style="fill:#3a92fa;fill-opacity:0.43137255;stroke:#000000;stroke-width:1.18836449;stroke-linejoin:round;stroke-miterlimit:3.5;stroke-dasharray:none;stroke-opacity:1"
+             id="rect73940-6"
+             width="124.35416"
+             height="95.25"
+             x="15.875"
+             y="134.9375"
+             ry="7.1437502" />
+        </g>
+        <rect
+           style="fill:#ffffff;stroke:#000000;stroke-width:1.18836449;fill-opacity:0.43137255;stroke-dasharray:none"
+           id="rect4762-7"
+           width="124.39399"
+           height="48.407677"
+           x="15.855085"
+           y="164.00418"
+           ry="0" />
+      </g>
+      <path
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.87776593;stroke-linejoin:round;stroke-miterlimit:3.5;stroke-dasharray:none;stroke-opacity:1"
+         d="m 38.364583,166.6875 c 3.52776,-3.96873 7.055538,-7.93748 10.583333,-11.90625"
+         id="path71083-8"
+         inkscape:original-d="m 38.364583,166.6875 c 3.528041,-3.96848 7.05582,-7.93723 10.583333,-11.90625"
+         inkscape:path-effect="#path-effect71085-7" />
+      <path
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.87776593;stroke-linejoin:round;stroke-miterlimit:3.5;stroke-dasharray:none;stroke-opacity:1"
+         d="m 41.010416,164.04166 c -0.881675,-0.88167 -1.763623,-1.76362 -2.645833,-2.64583"
+         id="path71117-3"
+         inkscape:original-d="m 41.010416,164.04166 c -0.881679,-0.88167 -1.763625,-1.76362 -2.645833,-2.64583"
+         inkscape:path-effect="#path-effect71119-4" />
+      <text
+         xml:space="preserve"
+         transform="matrix(0.46536803,0,0,0.46536803,-25.186965,-110.86763)"
+         id="text77077-7"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.3333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect77079-3);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.88617583;stroke-linejoin:round;stroke-miterlimit:3.5;stroke-dasharray:none;stroke-opacity:1"><tspan
+           x="150"
+           y="559.46302"
+           id="tspan7681">Čítač vzorků
+</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.76111px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.87776593;stroke-dasharray:none"
+         x="39.174011"
+         y="196.98384"
+         id="text5246-7"><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.76111px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.87776593;stroke-dasharray:none"
+           x="39.174011"
+           y="196.98384"
+           id="tspan5256-7">Gated+ reset mód </tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.76111px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.87776593;stroke-dasharray:none"
+         x="30.215384"
+         y="166.85924"
+         id="text5260-8"><tspan
+           sodipodi:role="line"
+           id="tspan5258-2"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.76111px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.87776593;stroke-dasharray:none"
+           x="30.215384"
+           y="166.85924">TRGO- čítač běží (CEN)</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.76111px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.87776593;stroke-dasharray:none"
+         x="29.540834"
+         y="179.50471"
+         id="text5264-1"><tspan
+           sodipodi:role="line"
+           id="tspan5262-2"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.76111px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.87776593;stroke-dasharray:none"
+           x="29.540834"
+           y="179.50471">Update - TRGO</tspan><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.76111px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.87776593;stroke-dasharray:none"
+           x="29.540834"
+           y="189.2061"
+           id="tspan5266-3" /></text>
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.87776593;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow4)"
+         d="M 25.836786,164.04166 H 9.6315651"
+         id="path5398" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.87776593;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow3)"
+         d="M 8.7804249,177.33706 H 24.997303"
+         id="path5613" />
+    </g>
+  </g>
+</svg>

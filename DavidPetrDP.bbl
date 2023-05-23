@@ -1,4 +1,9 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{LPE}
+Lpe 2023 - laboratoře průmyslové elektroniky v roce 2023.
+\newblock [online], 2022.
+\newblock [cit. 2023-05-22.
 
 \bibitem{BerlingerDIP}
 {\sc Berlinger, A.}
@@ -6,11 +11,30 @@
   stm32, 2016.
 \newblock [cit. 2023-05-23].
 
+\bibitem{AN_DMA}
+{\sc DanielleCollins}.
+\newblock An2548 using the stm32f0/f1/f3/cx/gx/lx series dma controller.
+\newblock [online], 12 2022.
+\newblock [cit. 2020-05-21].
+
 \bibitem{DujavaDIP}
 {\sc Dujava, J.}
 \newblock Softvérovo definované osciloskopy s terminálovým rozhraním,
   2023.
 \newblock [cit. 2023-03-15].
+
+\bibitem{G030Foto}
+{\sc Fischer, J.}
+\newblock G0-lab s stm32g031.
+\newblock [online], 7 2017.
+\newblock [cit. 2020-05-09].
+
+\bibitem{SDI_Hladik}
+{\sc Hladik, J.}
+\newblock Single chip software defined instrumentation for educational
+  purposes.
+\newblock [online], 05 2017.
+\newblock [cit. 2023-05-08].
 
 \bibitem{ScopeRigol}
 {\sc RIGOL~TECHNOLOGIES, I.}
@@ -18,12 +42,25 @@
 \newblock [online], 12 2015.
 \newblock [cit. 2020-04-13].
 
+\bibitem{G4EXTI}
+{\sc STMicoelectronics}.
+\newblock Stm32g4 extended interrupts and events controller.
+\newblock [online].
+\newblock [cit. 2020-05-18].
+
 \bibitem{refG4}
 {\sc STMicroelectronics}.
 \newblock Reference manual {RM0440} stm32g4 series advanced arm®-based 32-bit
   mcus.
 \newblock [online], 1 2017.
 \newblock [cit. 2023-04-30].
+
+\bibitem{AN_Cordic}
+{\sc STMicroelectronics}.
+\newblock An5325 how to use the cordic to perform mathematical functions on
+  stm32 mcus.
+\newblock [online], 02 2021.
+\newblock [cit. 2023-04-29].
 
 \bibitem{dataG431}
 {\sc STMicroelectronics}.
