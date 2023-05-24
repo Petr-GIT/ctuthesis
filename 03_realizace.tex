@@ -35,7 +35,7 @@ Především z důvodů omezených hardwarových prostředků na různých mikro
 \subsection{Využití LL ovladačů}
 Firma STMicroelectronics pro podporu svého portfólia mikrokontrolérů nabízí tzv. LL ovladače usnadňující psaní firmware. Jedná se o hardwarově orientovanou knihovnu jejíž využití je velmi podobné využití CMSIS ovladačů s tím rozdílem, že nabízí určité rozšířené možnosti portovatelnosti mezi jednotlivými rodinami mikrokontrolérů a sadu rozšiřujících API pro zjednodušení implementace některých úkonů, jako je například inicializace periferií. K použití této knihovny je oproti pravděpodobně známější knihovně HAL zapotřebí znalost jednotlivých periferií, jelikož velká část definovaných funkcí je pouze jednořádková modifikace registrů bez kontrol vstupních parametrů a uživatel tedy musí být více obeznámen s tím co dělá. Výhodou LL oproti HAL je výrazně menší délka generovaného kódu a tedy nižší paměťová náročnost.\\
 
-Pro vytvoření představy o rozdílnosti paměťové náročnosti jednotlivých knihoven jsem vytvořil pomocí STM32CubeMX dva minimální projekty, jejichž úkolem bylo pouze inicializace systémových hodin a dále blikání jednou LED. V prvním případě byly periferie RCC(Reset and clock control) a GPIO inicializovány prostřednictvím HAL knihovny a v druhém případě pomocí LL ovladačů a byly použity odpovídají zpožďovací funkce společně s přepínáním výstupu pinu. Výsledkem bylo, že  po zkompilování verze s HAL knihovnou využívala asi o 46 procent více FLASH paměti.
+Pro vytvoření představy o rozdílnosti paměťové náročnosti jednotlivých knihoven jsem vytvořil pomocí STM32CubeMX dva minimální projekty, jejichž úkolem bylo pouze inicializace systémových hodin a dále blikání jednou LED. V prvním případě byly periferie RCC(Reset and clock control) a GPIO inicializovány prostřednictvím HAL knihovny a v druhém případě pomocí LL ovladačů. Dále byly použity odpovídají zpožďovací funkce společně s přepínáním výstupu pinu. Výsledkem bylo, že  po zkompilování verze s HAL knihovnou využívala asi o 46 procent více FLASH paměti.
 
 \begin{table}[H]
 	\begin{tabular}{l|ll}
@@ -168,11 +168,11 @@ Nevýhodou využití interních registrů pro generaci signálových průběhů 
 \begin{minipage}{0.69\linewidth}	
 		\begin{itemize}
 			\item \textbf{Výstupní frekvence signálu} Požadovanou výstupní frekvenci signálu lze nastavovat v rozsahu 1 Hz - 250 KHz. V závislosti na nastavení výstupní frekvence signálu a omezení maximální vzorkovací frekvence DAC převodníku - se automaticky stanoví počet vzorků na jednu periodu signálu v rozsahu 4 - 1000 vzorků. 
-			\item \textbf{Rozkmit} signálu se v prostředí aplikace zadává v procentech celkového 12- Bitového rozsahu DAC převodníku, který tedy jako maximální číslicovou hodnotu kterou dokáže využít bere hodnotu 0xFFF. Rozkmit určuje v jakém rozsahu se bude obor hodnot generovaného signálu pohybovat. Pokud označíme funkci určující tvar signálu $g(n)$ s tím že $n$ označuje číslo vzorku, tak můžeme psát:
+			\item \textbf{Rozkmit} signálu se v prostředí aplikace zadává v procentech celkového 12- Bitového rozsahu DAC převodníku, který tedy jako maximální číslicovou hodnotu kterou dokáže využít bere hodnotu 0xFFF. Rozkmit určuje, v jakém rozsahu se bude obor hodnot generovaného signálu pohybovat. Pokud označíme funkci určující tvar signálu $g(n)$ s tím, že $n$ označuje číslo vzorku, tak můžeme psát:
 			\begin{equation}
 				O(g)=<0,\text{rozkmit}\times\text{0xFFF}>
 			\end{equation}
-			\item \textbf{Offset} nebo také posuv signálu se opět udává v procentech rozsahu převodníku. Jedná se o nejmenší hodnotu generovaného signálu respektive o hodnotu, která  posouvá vypočtené hodnoty funkcí $g$. Díky tomu můžeme popsat funkci výpočtu $n$-tého vzorku bufferu :
+			\item \textbf{Offset} nebo také posuv signálu se opět udává v procentech rozsahu převodníku. Jedná se o nejmenší úroveň generovaného signálu respektive o hodnotu, která  posouvá vypočtené hodnoty funkcí $g$. Díky tomu můžeme popsat funkci výpočtu $n$-tého vzorku bufferu :
 					\begin{equation}
 				f(n)=\min{\left({(\text{offset}\times\text{0xFFF})+g(n),\text{0xFFF}}\right)}
 			\end{equation}
@@ -183,12 +183,12 @@ Nevýhodou využití interních registrů pro generaci signálových průběhů 
 \end{figure}
 
 \subsubsection{Optimalizace délky bufferu}
-Obvyklý postup při generaci signálu s vyžitím DMA řadiče a paměti RAM je stanovit stálý počet vzorků $N_\text{s}$ na jednu periodu generovaného signálu v závislosti na velikosti dostupné paměti. Dále na základě požadované výstupní frekvenci signálu $f_{\text{out}}$ , což je frekvence s jakou se generovaný signál má opakovat, se určí časová základna pro generování vzorků DAC převodníkem. Ta je definována dělícím poměrem DIV čítače pro generování zmíněné časové základny. Závislost tohoto dělícího poměru na frekvenci vstupních hodin toho čítače $f_{\text{PCLK}}$, výstupní frekvenci signálu a počet vzorků $N_\text{s}$ je vyjádřena vzorcem:
+Obvyklý postup při generaci signálu s vyžitím DMA řadiče a paměti RAM je stanovit stálý počet vzorků $N_\text{s}$ na jednu periodu generovaného signálu v závislosti na velikosti dostupné paměti. Dále na základě požadované výstupní frekvence generovaného signálu $f_{\text{out}}$ , což je frekvence s jakou se generovaný signál má opakovat, se určí časová základna pro generování vzorků DAC převodníkem. Ta je definována dělícím poměrem DIV čítače pro generování zmíněné časové základny. Závislost tohoto dělícího poměru na frekvenci vstupních hodin toho čítače $f_{\text{PCLK}}$, výstupní frekvenci  generovaného signálu $f_{\text{out}}$ a počtu vzorků $N_\text{s}$ je vyjádřena vzorcem:
 \begin{equation}
 	\text{DIV}=\frac{f_{\text{PCLK}}}{	f_{\text{out}}\cdot }
 \end{equation} 
 
-Nicméně zde narážíme na omezené možnosti nastavení výstupní frekvence signálu v podobě dělícího poměru DIV, který může nabývat pouze celočíselných hodnot. Pro zlepšení rozmezí nastavitelných frekvencí výstupního signálu jsem se inspiroval článkem \cite{SDI_Hladik}, kde autor využívá toho, že nepracuje s konstantní délkou záznamové paměti, ale adaptivně se zkracuje pro jemné nastavení výstupní frekvence signálu. Metoda spočívá v iterativním zkracováním délky bufferu a minimalizování absolutní odchylky frekvence generovaného signálu.
+Nicméně zde narážíme na omezené možnosti nastavení $f_{\text{out}}$ pomocí dělícího poměru DIV, který může nabývat pouze celočíselných hodnot. Pro zlepšení rozmezí nastavitelných frekvencí výstupního signálu jsem se inspiroval článkem \cite{SDI_Hladik}, kde autor využívá toho, že nepracuje s konstantní délkou záznamové paměti, ale adaptivně se zkracuje pro jemné nastavení výstupní frekvence signálu. Metoda spočívá v iterativním zkracováním délky bufferu a minimalizování absolutní odchylky frekvence generovaného signálu.
 
 V rovnicích \ref{eq:signalFrequency} uvádím vztahy pro výpočet reálné výstupní frekvence $f_{\text{out}}$, která je tedy závislá na počtu vzorků v kruhovém bufferu  ($N_\text{s}$) a vzorkovací frekvenci ($f_\text{s}$). Vzorkovací frekvence je pak zase podílem frekvence vstupních hodin čítače $f_{\text{PCLK}}$ a dělícího poměru DIV.
  
@@ -198,7 +198,7 @@ V rovnicích \ref{eq:signalFrequency} uvádím vztahy pro výpočet reálné vý
 	\label{eq:signalFrequency}
 \end{equation}
 
- Dělící poměr DIV je závislý na nastavení ARR (auto-reload register) a PSC(Prescaler Register) registrech čítače. Zde je podstatné uvést, že ke skutečným hodnotám registrů ARR a PSC se musí přičíst 1, abychom získali správnou hodnotu jako je vidět ve vzorci \ref{eq:DIVvalue}. Při optimalizaci délky bufferu tedy  v prvním kroku nehledáme jen dělící poměr DIV, ale faktorizaci tohoto dělícího čísla, která nám minimalizuje rozdíl mezi cílenou vzorkovací frekvencí $f_{\text{s}}$ a reálnou vzorkovací frekvencí dosažitelnou při daných vstupních hodinách čítače. Pro nalezení optimálních hodnot ARR a PSC jsem využil algoritmu popsaného v práci \cite{DujavaDIP}. 
+ Dělící poměr DIV je závislý na nastavení ARR (auto-reload register) a PSC (Prescaler Register) registrech čítače. Zde je podstatné uvést, že ke skutečným hodnotám registrů ARR a PSC se musí přičíst 1, abychom získali správnou hodnotu, jako je vidět ve vzorci \ref{eq:DIVvalue}. Při optimalizaci délky bufferu tedy  v prvním kroku nehledáme jen dělící poměr DIV, ale faktorizaci tohoto dělícího čísla, která nám minimalizuje rozdíl mezi cílenou vzorkovací frekvencí $f_{\text{s}}$ a reálnou vzorkovací frekvencí dosažitelnou při daných vstupních hodinách čítače. Pro nalezení optimálních hodnot ARR a PSC jsem využil algoritmu popsaného v práci \cite{DujavaDIP}. 
   
   \begin{equation}
  	\text{DIV}=(\text{ARR}+1)\cdot(\text{PSC}+1)
@@ -468,7 +468,7 @@ Zmíněný vzorec je vhodné použít pokud známe přesné vnitřní parametry 
 	\label{tab:maxRAIN}
 \end{table}
 
- Na obrázku \ref{fig:wrongmaxrain} je pak vyobrazen příklad, kdy pomocí impulzního generátoru generuji PWM signál s frekvencí $f_{\text{pwm}}=$5 kHz a přivádím na vstupy ADC převodníků. Jeden z kanálů je připojen na přímo a druhý kanál přes odpor 47 k$\Omega$. Pro vzorkovací frekvenci $f_{\text{SAMP}}=2$MHz dostaneme informaci o maximálním vstupním odporu $R_{\text{AIN}}=680\Omega$. Odpovídající dle tabulky \ref{tab:maxRAIN} době vzorkování $T_s=240$ ns. Na vstupním kanálu číslo 1, který je spojen se impulzním generátorem přes zmíněný odpor R=47 k$\Omega$ je vidět pokles napětí $\Delta V=691$ mV způsobený tím, že se vzorkovací kondenzátor se nestíhá dobíjet nedodržením podmínky \ref{eq:RAIN}.
+ Na obrázku \ref{fig:wrongmaxrain} je pak vyobrazen příklad, kdy pomocí impulzního generátoru generuji PWM signál s frekvencí $f_{\text{pwm}}=$5 kHz přivedený na vstupy ADC převodníků. Jeden z kanálů je připojen na přímo a druhý kanál přes odpor 47 k$\Omega$. Pro vzorkovací frekvenci $f_{\text{SAMP}}=2$MHz dostaneme informaci o maximálním vstupním odporu $R_{\text{AIN}}=680\Omega$. Odpovídající dle tabulky \ref{tab:maxRAIN} době vzorkování $T_s=240$~ns. Na vstupním kanálu číslo 1, který je spojen se impulzním generátorem přes zmíněný odpor R=47~k$\Omega$ je vidět pokles napětí $\Delta V=691$ mV způsobený tím, že se vzorkovací kondenzátor se nestíhá dobíjet nedodržením podmínky \ref{eq:RAIN}.
 
 
 \begin{figure}[H]

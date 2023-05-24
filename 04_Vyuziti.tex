@@ -1,9 +1,11 @@
 %!TEX ROOT=DavidPetrDP.tex
-\chapter{Ověření funkčnosti a možnosti využití přístroje}
-Vzniklý FW měl fungovat s PC aplikací, která se již v používá společně STM32F042 v hodinách laboratoří průmyslové elektroniky(LPE), které se vyučují na ČVUT FEL a bylo tedy zapotřebí ověřit funkčnost všech implementovaných modulů. Funčnost nového firmware byla testována studenty již v průběhu letního semestru 2022/23, kdy tato práce vznikala. Současně funkci všech částí FW demonstruji v této kapitole prostřednictvím reálných záznamů běhu PC aplikace spolupracující s mým FW běžícím na mcu STM32G431
+\chapter{Ověření funkčnosti přístroje a možnosti jeho využití}
+Vzniklý FW měl spolupracovat s PC aplikací, která se již v používá společně STM32F042 v předmětu laboratoře průmyslové elektroniky(LPE), které se vyučují na ČVUT FEL a bylo tedy zapotřebí ověřit funkčnost všech implementovaných modulů. Funkčnost nového firmware byla testována studenty již v průběhu letního semestru 2022/23, kdy tato práce vznikala. Současně funkci všech částí FW demonstruji v této kapitole prostřednictvím reálných záznamů běhu PC aplikace spolupracující s mým FW běžícím na mcu STM32G431
+
 \section{Signálový Generátor}
+
 \subsection{Rychlost přeběhu výstupního zesilovače DAC převodníku}
-Maximální použitelná výstupní frekvence generátoru souvisí s omezenou rychlostí přeběhu(SR) výstupu DAC převodníku. Na obrázku \ref{fig:Obdelnik250kReal}, je vidět záznam měření, kdy jsem generoval obdélníkový signál s frekvencí 250KHz- tedy pouze 4 vzoky na periodu a byl zvolen v plný rozkmit výstupního signálu. Z obrázku je zřejmá omezená rychlost přeběhu, kterou můžeme rovnou změřit pomocí v aplikaci integrovaných kurzorů a dopočítat dle:
+Maximální použitelná výstupní frekvence generátoru souvisí s omezenou rychlostí přeběhu(SR) výstupu DAC převodníku. Na obrázku \ref{fig:Obdelnik250kReal}, je vidět záznam měření, kdy jsem generoval obdélníkový signál s frekvencí 250~kHz- tedy pouze 4 vzoky na periodu a byl zvolen v plný rozkmit výstupního signálu. Z obrázku je zřejmá omezená rychlost přeběhu, kterou můžeme rovnou změřit pomocí v aplikaci integrovaných kurzorů a dopočítat dle:
 \begin{equation}
 	\text{SR}=\frac{\Delta V}{\Delta t}=\frac{2.668 [\text{V}]}{1.387 [\mu\text{s}]}=1.92 [\text{V/}\mu\text{s}]
 \end{equation}

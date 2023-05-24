@@ -1,7 +1,7 @@
 
 %!TEX ROOT=DavidPetrDP.tex
 \chapter{Úvod}
-V rámci výuky na katedře měření v předmětech zaměřující se na elektroniku se již nějaký čas používají softwarově definované přístroje(SDI), které slouží jako dostupná náhrada za laboratorní vybavení jako jsou osciloskopy nebo signálové generátory. Ač tyto přístroje nedosahují parametrů profesionálních přístrojů, tak existuje mnoho aplikací kde jejich výkon ve smyslu maximální vzorkovací frekvence či přesnosti určení napětí je dostatečná a přístroje tak mohou v těchto případech profesinální přístroje nahradit.\\
+V rámci výuky na katedře měření v předmětech zaměřující se na elektroniku se již nějaký čas používají softwarově definované přístroje(SDI), které slouží jako dostupná náhrada za laboratorní vybavení jako jsou osciloskopy nebo signálové generátory. Ač tyto přístroje nedosahují parametrů profesionálních přístrojů, tak existuje mnoho aplikací, kde jejich výkon ve smyslu maximální vzorkovací frekvence či přesnosti určení napětí je dostatečné a přístroje tak mohou v těchto případech profesinální přístroje nahradit.\\
 
 Konkrétně v předmětu laboratoře průmyslové elektroniky(LPE) se právě používá SDI běžící na MCU STM32F042 v kombinaci s aplikací Zero Elab Viewer pro různé experimenty jako je měření časové konstanty RC článku, zapojování různých obvodů s operačními zesilovači a mnoho dalších. SDI se v rámci výuky také používá pro diagnostiku správnosti funkce programů, které studenti sami programují na výukových modulech s nepájivými poli.\\
 
@@ -9,7 +9,7 @@ Nově se studenti učí programovat MCU řady STM32G431, které oproti původně
 
 
 \chapter{Rozbor}
-Jak již bylo výše zmíněno v laboratoři se dlouhodobě používá SDI vzniklý okolo STM32F042 společně s aplikací Zero Elab Viewer. V rámci výuky programování mikrokontrolérů se přešlo na nový modul(Obr. \ref{fig:g431breadboard}) s výkonnějším MCU STM32G431, který obsahuje jádro ARM Cortex-M4 a vyšší počet periferií než doposud používaná STM32F042. Otevřeli se tím možnosti pro implementace SDI s lepšími parametry jako je například modul vzniklý v rámci práce \cite{DujavaDIP} spolupracující s aplikací VSVI. Ten oproti dosud používanému řešení nabízel nově funkční generátor, komplexní pulzní generátor a také výrazně vyšší vzorkovací frekvence osciloskopu dosahující až 6.5 MSps.
+Jak již bylo výše zmíněno v laboratoři se dlouhodobě používá SDI vzniklý okolo STM32F042 společně s aplikací Zero Elab Viewer. V rámci výuky programování mikrokontrolérů se přešlo na nový modul(obr. \ref{fig:g431breadboard}) s výkonnějším MCU STM32G431, který obsahuje jádro ARM Cortex-M4 a vyšší počet periferií než doposud používaná STM32F042. Otevřely se tím možnosti pro implementace SDI s lepšími parametry, jako je například modul vzniklý v rámci práce \cite{DujavaDIP} spolupracující s aplikací VSVI. Ten oproti dosud používanému řešení nabízel nově funkční generátor, komplexní pulzní generátor a také výrazně vyšší vzorkovací frekvence osciloskopu dosahující až 6.5 MSps.
 
 \begin{figure}[H]
 	\centering
@@ -25,10 +25,10 @@ Nicméně jiné ovládání (TUI) oproti klasickému grafickému rozhraní a tak
 	\caption{Modul SDI s STM32F042 s předchystaným FW pro Zero Elab Viewer    }
 	\label{fig:modulef042}
 \end{figure}
-Úkolem této práce tedy bylo vytvořit firmware pro mikrořadič STM32G431 tak, aby jej ve spolupráci
-s PC aplikací Zero eLab Viewer bylo možno využít jako jednoduchý, avšak komplexní měřicí přístroj pro výukové účely. Nejdříve bylo nutno tedy analyzovat protokol existující aplikace a vytvořit firmware tak, aby využil všech funkcí, které aplikace již nabízí. Dále mělo dojít ke zlepšení parametrů oproti původní verzi SDI pro F042 a to především dosáhnout vyšších vzorkovacích frekvencí osciloskopu a logického analyzátoru, využít větších paměťových kapacit, které STM32G431 nabízí pro  delší záznamovou paměť a v neposlední řadě také implementovat nové funkce jako je generátor funkcí. Přístroj by měl dále zahrnovat funkce impulsního generátoru, čítače a voltmetru se záznamem.
+Úkolem této práce tedy je vytvořit firmware pro mikrořadič STM32G431 tak, aby jej ve spolupráci
+s PC aplikací Zero eLab Viewer bylo možno využít jako jednoduchý, avšak komplexní měřicí přístroj pro výukové účely. Nejdříve bylo nutno tedy analyzovat protokol existující aplikace a vytvořit firmware tak, aby využil všech funkcí, které aplikace již nabízí. Dále by mělo dojít ke zlepšení parametrů oproti původní verzi SDI pro STM32F042 a to především dosáhnout vyšších vzorkovacích frekvencí osciloskopu a logického analyzátoru, využít větších paměťových kapacit, které STM32G431 nabízí pro  delší záznamovou paměť a v neposlední řadě také implementovat nové funkce jako je generátor funkcí. Přístroj by měl dále zahrnovat funkce impulsního generátoru, čítače a voltmetru se záznamem.
 \section{PC aplikace Zero Elab Viewer}
-V roce 2016 v rámci své diplomové práce pan Ing.Adam Berlinger vytvořil aplikaci Zero Elab Viewer fungující jako grafické rozhraní pro komunikaci se softwarově definovaným nástrojem(SDI) založeném na STM32F042. Aplikace společně s FW umožňuje používání MCU jako dostupnou náhradu za laboratorní přístroje  jako jsou voltmetr, osciloskop, impulsní generátor, signálový generátor nebo logický analyzátor. Aplikace se od té doby stále používá v hodinách praktické elektroniky a od té doby vznikla ještě řada implementací FW pro jiné MCU. Nejnověji například verze pro mikrokontrolér ATMega 328 pro uživatele se zkušenostmi s ARDUINO nebo zatím nejmenší (a nejlevnější) varianta SDI přístoje vzniklá na katedře měření využívající 8-pinovou variantu mikrokontroleru STM32G030.\\
+V roce 2016 v rámci své diplomové práce \cite{BerlingerDIP} pan Ing.Adam Berlinger vytvořil aplikaci Zero Elab Viewer fungující jako grafické rozhraní pro komunikaci se softwarově definovaným nástrojem(SDI) založeném na STM32F042. Aplikace společně s FW umožňuje používání MCU jako dostupnou náhradu za laboratorní přístroje  jako jsou voltmetr, osciloskop, impulsní generátor, signálový generátor nebo logický analyzátor. Aplikace se od té doby stále používá ve výuce praktické elektroniky a od té doby vznikla ještě řada implementací FW pro jiné MCU. Nejnověji například verze pro mikrokontrolér ATMega 328 pro uživatele se zkušenostmi s ARDUINO nebo zatím nejmenší (a nejlevnější) varianta SDI přístoje vzniklá využívající 8-pinovou variantu mikrokontroleru STM32G030.\\
 
 \begin{figure}[H]
 	\centering
@@ -40,7 +40,7 @@ V roce 2016 v rámci své diplomové práce pan Ing.Adam Berlinger vytvořil apl
 \subsection{Existující SDI FW pro spolupráci s aplikací Zero Elab Viewer}
 
 \begin{itemize}
-	\item STM32F042
+	\item Firmware pro SDI s STM32F042
 	\begin{itemize}
 		\item Osciloskop- záznam až 1152 vzorků, rozlišení 12 bitů,
 		\item Rychlost záznamu až 1x 600 kS/s 
@@ -48,7 +48,7 @@ V roce 2016 v rámci své diplomové práce pan Ing.Adam Berlinger vytvořil apl
 		\item Impulsní generátor PWM , nastavení  střídy 0 až 100 \%; nastavení frekvence 1 Hz až 24 MHz
 		\item Voltmetr tři kanály, 0 až + 3,3 V, 100 odměrů/s, průměrování z 1 až 256 odměrů, možnost funkce záznamu
 	\end{itemize}
-	\item STM32G030
+	\item Firmware pro SDI STM32G030
 	\begin{itemize}
 		\item Osciloskop- záznam až 2048 vzorků, rozlišení 12 bitů,
 		\item Rychlost záznamu až 1x 2 MS/s (nebo  2x 1 MS/s, 3 x 666 kS/s).
@@ -56,7 +56,7 @@ V roce 2016 v rámci své diplomové práce pan Ing.Adam Berlinger vytvořil apl
 		\item Impulsní generátor PWM , nastavení  střídy 0 až 100 \%; nastavení frekvence 1 Hz až 32 MHz
 		\item Voltmetr tři kanály, 0 až + 3,3 V, 100 odměrů/s, průměrování z 1 až 256 odměrů, možnost funkce záznamu
 	\end{itemize}
-	\item  ATMega 328
+	\item Firmware pro SDI s ATMega 328
 			\begin{itemize}
 		\item Dvoukanálový Osciloskop- záznam až 768 vzorků, rozlišení 8 bitů,
 		\item Rychlost záznamu až 1x 80 kS/s (nebo  2x 50 kS/s, 3 x 666 kS/s).
@@ -70,8 +70,8 @@ V roce 2016 v rámci své diplomové práce pan Ing.Adam Berlinger vytvořil apl
 \section{Použitý MCU STM32G431}
 Navržený mikrokontrolér s jádrem Arm® 32-bit Cortex®-M4 může běžet až s maximální frekvencí jádra 170MHz a tak ve srovnání s předchozími implementacemi na STM32F042(48MHz) a STM32G030(64MHz) nabízí větší výpočetní výkon. Navíc obsahuje více dostupných periferií vhodným pro implementaci SDI, jako jsou 2 ADC převodníky či větší počet periferií čítačů(14 vs 8 u G030).
 
-\section{Komunikační protokol}
-Komunikační protokol aplikace Zero Elab Viewer je postaven kolem 2 druhů zpráv. Druh zpráv jsou od sebe navzájem odlišeny prvním bytem zprávy. Zaprvé jsou to zprávy typu příkazů, (CMD), které slouží k oboustrannému předávání pokynů. Jedná se o jednoduché zprávy ve kterých pole CH určuje kterému modulu je příkaz určen tedy jestli se jedná o příkaz voltmetru, pulzního generátoru nebo například obecný příkaz měnící konfiguraci přístroje. Dále pole CMD rozlišuje o jaký druh příkazu se jedná typicky příkaz pro jednotlivé společný je zapnutí/vypnutí běhu daného modulu a hodnota příkazu pak rozšiřuje možnost předaných parametrů spojených s daným příkazem. Druhým typem zpráv jsou je data, která míří z MCU do aplikace v PC specifikovaná číslem kanálu(modulu) z jakého data pocházejí, délkou data po které pak už následují samotná data. Oba formáty zpráv jsou naznačeny na obrázcích \ref{fig:communicationcmd} a \ref{fig:communicationdata}. 
+\section{Komunikační protokol aplikace ZeroElab Viewer }
+Komunikační protokol aplikace Zero Elab Viewer je postaven kolem 2 druhů zpráv. Druhy zpráv jsou od sebe navzájem odlišeny prvním bytem zprávy. Zaprvé jsou to zprávy typu příkazů, (CMD), které slouží k oboustrannému předávání pokynů. Jedná se o jednoduché zprávy, ve kterých pole CH určuje, kterému modulu je příkaz určen, tedy jestli se jedná o příkaz voltmetru, pulzního generátoru nebo například obecný příkaz měnící konfiguraci přístroje. Dále pole CMD rozlišuje, o jaký druh příkazu se jedná. Typicky příkaz společný pro jednotlivé moduly je zapnutí/vypnutí běhu daného modulu a hodnota příkazu pak rozšiřuje možnost předaných parametrů spojených s daným příkazem. Druhým typem zpráv jsou je data, která míří z MCU do aplikace v PC specifikovaná číslem kanálu(modulu), z kterého data pocházejí, délkou data po které pak už následují samotná data. Oba formáty zpráv jsou naznačeny na obrázcích \ref{fig:communicationcmd} a \ref{fig:communicationdata}. 
  
 \begin{figure}[H]
 	\centering
